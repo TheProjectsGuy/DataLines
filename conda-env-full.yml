@@ -1,0 +1,12 @@
+name: datalines
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyterlab
+  - pip:
+    - build
+    - twine

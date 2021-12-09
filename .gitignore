@@ -1,2 +1,6 @@
 # Ignore VSCode
 /.vscode/
+
+# Ignore build
+*.egg-info
+/dist/
