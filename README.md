@@ -2,12 +2,18 @@
 
 A package to prevent reinventing the wheel every time data needs to be loaded or processed. Aims at operating with the least number of dependencies (for high compatibility and lightweight).
 
+[![Homepage: TheProjectsGuy/DataLines repository](https://img.shields.io/badge/Homepage-TheProjectsGuy%2FDataLines-blueviolet)](https://github.com/TheProjectsGuy/DataLines)
+
+![Stable version: 0.1.0](https://img.shields.io/badge/Stable-0.1.0-informational)
+![Dev version](https://img.shields.io/badge/Dev-0.1.1-informational)
+
 ## Table of contents
 
 - [DataLines](#datalines)
     - [Table of contents](#table-of-contents)
     - [Docs](#docs)
     - [Contents](#contents)
+    - [Releases](#releases)
     - [References](#references)
 
 ## Docs
@@ -27,6 +33,10 @@ The contents of this folder are described below
 | [setup.py](./setup.py) | Project metadata |
 | [conda-env-full.yml](./conda-env-full.yml) | Anaconda environment (for development and build systems) |
 | [src](./src/README.md) folder | The main source code |
+
+## Releases
+
+Release information can be found in file [releases.md](./releases.md).
 
 ## References
 

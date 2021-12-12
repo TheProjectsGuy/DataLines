@@ -1,6 +1,20 @@
 # Releases
 
-Each release is `MAJOR.MINOR.PATCH`
+Each release is `MAJOR.MINOR.PATCH`. Some release commands (in the home folder)
+
+```pwsh
+Remove-Item .\dist\*
+pip uninstall datalines -y
+python -m build .
+python -m twine upload ./dist/*
+pip install datalines
+```
+
+Notes:
+
+- When a brand new dataloader or pipeline is added, increment `MINOR`
+- When a bug-fix happens, increment `PATCH`
+- Currently the package is in alpha, so `MAJOR` is `0`. Once it is more stable, `MAJOR` will become `1`.
 
 ## Table of contents
 
