@@ -4,3 +4,6 @@
 # Ignore build
 *.egg-info
 /dist/
+
+# Ignore tests
+tests/

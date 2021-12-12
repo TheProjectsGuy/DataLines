@@ -5,8 +5,10 @@ channels:
 dependencies:
   - numpy
   - scipy
+  - tqdm
   - matplotlib
   - jupyterlab
   - pip:
     - build
     - twine
+    - requests
