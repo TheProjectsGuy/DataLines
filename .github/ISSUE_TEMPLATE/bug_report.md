@@ -12,6 +12,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Do '...'
 2. Do '...'
 3. Error '...'
@@ -22,7 +23,8 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Platform (please complete the following information):**
+**Platform**
+
 - OS: [Ex: Windows 10, Ubuntu 20.04, MacOS 11, etc.]
 - Python Version: [Ex: 3.9.0]
 - DataLines Package Version: [Ex: 0.0.1]
