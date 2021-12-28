@@ -12,3 +12,4 @@ dependencies:
     - build
     - twine
     - requests
+    - joblib
