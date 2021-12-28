@@ -4,6 +4,9 @@
     Home page: https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html
 
     Creator: TheProjectsGuy
+
+    Version History:
+    - 0.1.1: Uses joblib in backend to load data faster
 """
 
 # %% Import modules
@@ -17,6 +20,7 @@ import numpy as np
 from PIL import Image
 import scipy.io
 from tqdm import tqdm
+from joblib import Parallel, delayed
 
 
 # %% Dataset types
@@ -265,36 +269,36 @@ class BSDS500_DataSet:
         # Path to data
         data_path = self.zipext_loc + "/" + \
             BSDS500_DataSet.__data_loc
-        # --- Load training data ---
-        img_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__x_tr_loc)
-        gt_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__y_tr_loc)
-        gp_data = ret_data(img_path, gt_path)
-        ns = len(gp_data["images"])
-        print(f"Loaded {ns} training samples")
-        # Save training data
-        self.data["training"] = copy.deepcopy(gp_data)
-        # --- Load test data ---
-        img_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__x_ts_loc)
-        gt_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__y_ts_loc)
-        gp_data = ret_data(img_path, gt_path)
-        ns = len(gp_data["images"])
-        print(f"Loaded {ns} test samples")
-        # Save test data
-        self.data["test"] = copy.deepcopy(gp_data)
-        # --- Load validation data ---
-        img_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__x_vl_loc)
-        gt_path = os.path.realpath(data_path + \
-            BSDS500_DataSet.__y_vl_loc)
-        gp_data = ret_data(img_path, gt_path)
-        ns = len(gp_data["images"])
-        print(f"Loaded {ns} validation samples")
-        # Save training data
-        self.data["validation"] = copy.deepcopy(gp_data)
+        # Training dataset
+        tr_img_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__x_tr_loc) # Images
+        tr_gt_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__y_tr_loc) # Ground Truth
+        # Test dataset
+        ts_img_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__x_ts_loc) # Images
+        ts_gt_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__y_ts_loc) # Ground Truth
+        # Validation dataset
+        vl_img_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__x_vl_loc) # Images
+        vl_gt_path = os.path.realpath(data_path + \
+            BSDS500_DataSet.__y_vl_loc) # Ground Truth
+        # Load data from paths using joblib
+        img_paths = [tr_img_path, ts_img_path, vl_img_path]
+        gt_paths = [tr_gt_path, ts_gt_path, vl_gt_path]
+        data = Parallel(n_jobs=3, prefer="threads")(
+            delayed(ret_data)(img_paths[i], gt_paths[i]) \
+                for i in range(3))  # Load groups in parallel
+        self.data["training"] = data[0]
+        self.data["test"] = data[1]
+        self.data["validation"] = data[2]
+        l = len(self.data["training"]["images"])
+        print(f"Loaded {l} training samples")
+        l = len(self.data["test"]["images"])
+        print(f"Loaded {l} test samples")
+        l = len(self.data["validation"]["images"])
+        print(f"Loaded {l} validation samples")
         return self.data
 
 # %%
@@ -307,7 +311,7 @@ if __name__ == "__main__":
     # start = time.time()
     # ds = BSDS500_DataSet()
     # stop = time.time()
-    # print(f"It took {stop - start} to initialize")
+    # print(f"It took {stop - start} seconds to initialize")
     # start = time.time()
     # ds.load_data()
     # stop = time.time()

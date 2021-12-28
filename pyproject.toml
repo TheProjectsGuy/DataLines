@@ -3,6 +3,7 @@ requires = [
     "numpy",
     "matplotlib",
     "scipy",
+    "joblib",
     "tqdm",
     "requests",
     "setuptools>=42",
