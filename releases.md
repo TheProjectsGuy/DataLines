@@ -1,6 +1,6 @@
 # Releases
 
-Each release is `MAJOR.MINOR.PATCH` (Uses [Semantic Versioning 2.0](https://semver.org/)). Some release commands (run in the home folder)
+Each release is `MAJOR.MINOR.PATCH` (Uses [Semantic Versioning 2.0](https://semver.org/)). Some release commands (run in the project root folder)
 
 ```pwsh
 Remove-Item .\dist\*
