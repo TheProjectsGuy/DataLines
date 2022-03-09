@@ -1,6 +1,25 @@
 # Releases
 
-Each release is `MAJOR.MINOR.PATCH` (Uses [Semantic Versioning 2.0](https://semver.org/)). Some release commands (run in the home folder)
+Each release is `MAJOR.MINOR.PATCH` (Uses [Semantic Versioning 2.0](https://semver.org/)).
+
+Notes:
+
+- When a brand new dataloader or pipeline is added, increment `MINOR`
+- When a bug-fix happens, increment `PATCH`
+- Currently, the package is in alpha, so `MAJOR` is `0`. Once stable, `MAJOR` will become `1`.
+
+## Table of contents
+
+- [Releases](#releases)
+    - [Table of contents](#table-of-contents)
+    - [Notes](#notes)
+    - [Major 0](#major-0)
+        - [Minor 1](#minor-1)
+            - [Patch 0](#patch-0)
+
+## Notes
+
+Some release commands (run in the home folder)
 
 ```pwsh
 Remove-Item .\dist\*
@@ -9,20 +28,6 @@ python -m build .
 python -m twine upload ./dist/*
 pip install datalines
 ```
-
-Notes:
-
-- When a brand new dataloader or pipeline is added, increment `MINOR`
-- When a bug-fix happens, increment `PATCH`
-- Currently the package is in alpha, so `MAJOR` is `0`. Once it is more stable, `MAJOR` will become `1`.
-
-## Table of contents
-
-- [Releases](#releases)
-    - [Table of contents](#table-of-contents)
-    - [Major 0](#major-0)
-        - [Minor 1](#minor-1)
-            - [Patch 0](#patch-0)
 
 ## Major 0
 

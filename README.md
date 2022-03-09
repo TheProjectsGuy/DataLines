@@ -18,7 +18,7 @@ A package to prevent reinventing the wheel every time data needs to be loaded or
 
 ## Docs
 
-Package documentation resources are listed below
+The official documentation is available at [datalines.readthedocs.io](https://datalines.readthedocs.io/). You may also find the following resources helpful
 
 - [datalines](./src/datalines/README.md) package
 
