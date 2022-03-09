@@ -5,7 +5,7 @@ A package to prevent reinventing the wheel every time data needs to be loaded or
 [![Homepage: TheProjectsGuy/DataLines repository](https://img.shields.io/badge/Homepage-TheProjectsGuy%2FDataLines-blueviolet)](https://github.com/TheProjectsGuy/DataLines)
 
 ![Stable version: 0.1.0](https://img.shields.io/badge/Stable-0.1.0-informational)
-![Dev version](https://img.shields.io/badge/Dev-0.1.1-informational)
+![Dev version: 0.1.1](https://img.shields.io/badge/Dev-0.1.1-informational)
 
 ## Table of contents
 

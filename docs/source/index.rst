@@ -10,7 +10,15 @@ Welcome to datalines's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Heading
+-------
 
+Some text
+
+Sub-Heading
+~~~~~~~~~~~
+
+Some other text
 
 Indices and tables
 ==================
