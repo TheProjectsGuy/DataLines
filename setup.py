@@ -1,5 +1,6 @@
 import setuptools
 
+# Read entire README
 with open("README.md", "r", encoding="utf-8") as fhdlr:
     long_description = fhdlr.read()
 
@@ -7,7 +8,7 @@ setuptools.setup(
     name="datalines",
     version="0.1.1",
     author="TheProjectsGuy",
-    author_email="vdd29rjre@mozmail.com",
+    author_email="123avneesh+datalines@gmail.com",
     description="Datalines = Dataloaders + Pipelines, add simplicity",
     long_description=long_description,
     long_description_content_type="text/markdown",
